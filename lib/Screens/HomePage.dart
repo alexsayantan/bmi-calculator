@@ -8,6 +8,7 @@ import '../Components/IconContent.dart';
 import '../Components/ReusableCard.dart';
 import '../Components/RoundIcon_Button.dart';
 import '../constants.dart';
+import 'AboutPage.dart';
 import 'Results_Page.dart';
 
 int height = 180;
@@ -35,11 +36,21 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Bazzel',
-            style: TextStyle(
-              fontFamily: 'Fugaz',
-              color: Colors.white,
+          title: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AboutPage(),
+                ),
+              );
+            },
+            child: Text(
+              'Bazzel',
+              style: TextStyle(
+                fontFamily: 'Fugaz',
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -48,41 +59,41 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Expanded(
                 child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: ReUsableCard(
-                        onPress: () {
-                          setState(() {
-                            selectedGender = Gender.male;
-                          });
-                        },
-                        color: selectedGender == Gender.male
-                            ? kactiveCardColor
-                            : kinActiveCardColor,
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          label: 'MALE',
-                        ),
-                      ),
+              children: <Widget>[
+                Expanded(
+                  child: ReUsableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    color: selectedGender == Gender.male
+                        ? kactiveCardColor
+                        : kinActiveCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: 'MALE',
                     ),
-                    Expanded(
-                      child: ReUsableCard(
-                        onPress: () {
-                          setState(() {
-                            selectedGender = Gender.female;
-                          });
-                        },
-                        color: selectedGender == Gender.female
-                            ? kactiveCardColor
-                            : kinActiveCardColor,
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.venus,
-                          label: 'FEMALE',
-                        ),
-                      ),
+                  ),
+                ),
+                Expanded(
+                  child: ReUsableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    color: selectedGender == Gender.female
+                        ? kactiveCardColor
+                        : kinActiveCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
                     ),
-                  ],
-                )),
+                  ),
+                ),
+              ],
+            )),
             Expanded(
               child: ReUsableCard(
                 color: kCC,
@@ -233,16 +244,17 @@ class _HomePageState extends State<HomePage> {
             BottomButton(
               buttonTitle: 'CALCULATE',
               onTap: () {
-                CalcProcessor calc =
-                    CalcProcessor(height: height, weight: weight);
+                CalcProcessor calc = CalcProcessor(
+                    height: height, weight: weight);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultsPage(
-                      bmiResult: calc.calculateBMI(),
-                      resultText: calc.getResult(),
-                      interpretation: calc.getInterpretation(),
-                    ),
+                    builder: (context) =>
+                        ResultsPage(
+                          bmiResult: calc.calculateBMI(),
+                          resultText: calc.getResult(),
+                          interpretation: calc.getInterpretation(),
+                        ),
                   ),
                 );
               },
