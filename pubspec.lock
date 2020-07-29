@@ -74,6 +74,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.8.1"
   image:
     dependency: transitive
     description:
@@ -121,6 +128,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slider:
+    dependency: "direct main"
+    description:
+      name: slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   source_span:
     dependency: transitive
     description:

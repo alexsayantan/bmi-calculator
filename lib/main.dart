@@ -1,34 +1,24 @@
 import 'package:flutter/material.dart';
 
+import 'HomePage.dart';
+
 void main() {
   runApp(BMICalculator());
 }
 
 class BMICalculator extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bazzel',
-      theme: ThemeData(
+      theme: ThemeData.dark().copyWith(
 
-        primarySwatch: Colors.blue,
-
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Color(0xFF0A0D22),
+        scaffoldBackgroundColor: Color(0xFF090C22),
+        accentColor: Colors.pinkAccent,
       ),
       home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
