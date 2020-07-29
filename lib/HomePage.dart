@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'ReusableCard.dart';
+
 import 'IconContent.dart';
-import 'constants.dart';
 import 'Results_Page.dart';
-import 'package:slider/slider.dart';
+import 'ReusableCard.dart';
+import 'constants.dart';
 
 int height = 180;
 int weight = 60;
@@ -234,7 +234,14 @@ class _HomePageState extends State<HomePage> {
               },
               child: Container(
                 alignment: Alignment.center,
-                child: Text('Calculate'),
+                child: Text(
+                  'Calculate',
+                  style: TextStyle(
+                    fontFamily: 'Fugaz',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20,
+                  ),
+                ),
                 color: Colors.pink,
                 margin: EdgeInsets.only(top: 10.0),
                 width: double.infinity,
