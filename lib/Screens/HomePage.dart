@@ -1,11 +1,14 @@
+import 'package:bmicalculator/Calculator_Processor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'IconContent.dart';
+import '../Components/Bottom_Button.dart';
+import '../Components/IconContent.dart';
+import '../Components/ReusableCard.dart';
+import '../Components/RoundIcon_Button.dart';
+import '../constants.dart';
 import 'Results_Page.dart';
-import 'ReusableCard.dart';
-import 'constants.dart';
 
 int height = 180;
 int weight = 60;
@@ -45,41 +48,41 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Expanded(
                 child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ReUsableCard(
-                    onPress: () {
-                      setState(() {
-                        selectedGender = Gender.male;
-                      });
-                    },
-                    color: selectedGender == Gender.male
-                        ? kactiveCardColor
-                        : kinActiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
+                  children: <Widget>[
+                    Expanded(
+                      child: ReUsableCard(
+                        onPress: () {
+                          setState(() {
+                            selectedGender = Gender.male;
+                          });
+                        },
+                        color: selectedGender == Gender.male
+                            ? kactiveCardColor
+                            : kinActiveCardColor,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.mars,
+                          label: 'MALE',
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: ReUsableCard(
-                    onPress: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                    },
-                    color: selectedGender == Gender.female
-                        ? kactiveCardColor
-                        : kinActiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
+                    Expanded(
+                      child: ReUsableCard(
+                        onPress: () {
+                          setState(() {
+                            selectedGender = Gender.female;
+                          });
+                        },
+                        color: selectedGender == Gender.female
+                            ? kactiveCardColor
+                            : kinActiveCardColor,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.venus,
+                          label: 'FEMALE',
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            )),
+                  ],
+                )),
             Expanded(
               child: ReUsableCard(
                 color: kCC,
@@ -117,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                               thumbShape: RoundSliderThumbShape(
                                   enabledThumbRadius: 9.0),
                               overlayShape:
-                                  RoundSliderOverlayShape(overlayRadius: 30.0),
+                              RoundSliderOverlayShape(overlayRadius: 30.0),
                             ),
                             child: Slider(
                               min: 120,
@@ -227,52 +230,26 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomButton(
+              buttonTitle: 'CALCULATE',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ResultsPage()));
-              },
-              child: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  'Calculate',
-                  style: TextStyle(
-                    fontFamily: 'Fugaz',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
+                CalcProcessor calc =
+                    CalcProcessor(height: height, weight: weight);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      bmiResult: calc.calculateBMI(),
+                      resultText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                    ),
                   ),
-                ),
-                color: Colors.pink,
-                margin: EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                height: kbottomContainerHeight,
-              ),
+                );
+              },
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.verChr});
-
-  final IconData icon;
-  final Function verChr;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      onPressed: verChr,
-      elevation: 6,
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
     );
   }
 }

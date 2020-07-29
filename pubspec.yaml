@@ -37,3 +37,6 @@ flutter:
     - family: Fugaz
       fonts:
         - asset: fonts/FugazOne-Regular.ttf
+    - family: FredokaOne
+      fonts:
+        - asset: fonts/FredokaOne-Regular.ttf
