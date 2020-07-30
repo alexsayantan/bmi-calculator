@@ -40,3 +40,9 @@ flutter:
     - family: FredokaOne
       fonts:
         - asset: fonts/FredokaOne-Regular.ttf
+    - family: IntroScriptDemo
+      fonts:
+        - asset: fonts/IntroScriptDemo-Medium.otf
+    - family: Track-Regular
+      fonts:
+        - asset: fonts/Track-Regular.otf

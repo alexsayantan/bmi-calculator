@@ -39,22 +39,39 @@ class AboutPage extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  Text('\"And Cutu You Are My Motivation'),
+                  Text(
+                    '\"And Cutu You Are My Motivation',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'IntroScriptDemo',
+                    ),
+                  ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     'You Are My Everything',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'IntroScriptDemo',
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text('I Love You Mera Baccha urf Wife urf Jaan\"'),
+                  Text(
+                    'I Love You Mera Baccha  urf  Wife  urf  Jaan\"',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'IntroScriptDemo',
+                    ),
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 300),
+                    padding: const EdgeInsets.only(top: 279),
                     child: Text(
                       'DEVELOPED  BY  SAYANTAN SAHA',
                       style: TextStyle(
+                        fontFamily: 'Track-Regular',
                         color: Colors.white24,
                       ),
                     ),
