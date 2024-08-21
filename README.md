@@ -1,6 +1,6 @@
 # BMI Calculator
 
-![BMI Calculator](https://copilot.microsoft.com/images/create/bmi-calculator-app-screenshot/1-66c57dcc655a4babbd04ce21f227ce83?id=qzFKdvmO7qhjTBxtc7%2bFWw%3d%3d&view=detailv2&idpp=genimg&idpclose=1&thId=OIG3.KecL23YyQ8tPrsmsURyM&lng=en-GB&ineditshare=1)
+![BMI Calculator](https://tse4.mm.bing.net/th?id=OIG3.KecL23YyQ8tPrsmsURyM&pid=ImgGn)
 
 ## Overview
 
@@ -49,7 +49,7 @@ Contributions are welcome! Please fork this repository and submit a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for details.
 
 ## Acknowledgements
 
